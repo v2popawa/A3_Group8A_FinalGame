@@ -2,6 +2,11 @@
 // Main app loop
 // --------------------------------------------------
 
+const GAME_W = 1280;
+const GAME_H = 720;
+
+let gameCanvas;
+
 let currentScreen = "start";
 let level1Sprite = null;
 let level2Sprite = null;
@@ -73,15 +78,22 @@ function startBackgroundMusic() {
   }
 }
 
+function centerCanvas() {
+  const x = (windowWidth - GAME_W) / 2;
+  const y = (windowHeight - GAME_H) / 2;
+  gameCanvas.position(x, y);
+}
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  gameCanvas = createCanvas(GAME_W, GAME_H);
   pixelDensity(1);
   textFont("Trebuchet MS");
   textAlign(CENTER, CENTER);
+  centerCanvas();
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  centerCanvas();
 }
 
 function draw() {
