@@ -42,7 +42,7 @@ let convictMode1 = false;
 function getLevel1Buttons() {
   return {
     begin: { x: width / 2, y: height * 0.82, w: 220, h: 52 },
-    convict: { x: width / 2, y: height * 0.9, w: 220, h: 40 },
+    convict: { x: width / 2, y: height * 0.2, w: 200, h: 40 },
     back: { x: width * 0.14, y: height * 0.12, w: 120, h: 46 },
     magnify: { x: width / 2, y: height * 0.82, w: 220, h: 50 },
   };
