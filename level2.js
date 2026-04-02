@@ -139,8 +139,8 @@ function drawLevel2Lineup() {
   const buttons = getLevel2Buttons();
   const positions = getLineupPositions(suspects2.length);
   const recordedCount = questioned2.filter(Boolean).length;
-  const imgW = min(width * 0.14, 175);
-  const imgH = min(height * 0.46, 410);
+  const imgW = min(width * 0.8, 180);
+  const imgH = min(height * 0.55, 420);
 
   drawCaseHeader(
     "Level 2: Jewelry Theft",

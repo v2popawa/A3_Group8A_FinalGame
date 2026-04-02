@@ -18,6 +18,9 @@ let level2BG;
 let level3BG;
 let level1BG;
 
+let bgMusic;
+let musicStarted = false;
+
 function preload() {
   level1BG = loadImage("assets/images/backgroundimagefixed.png");
   suspectImgs1[0] = loadImage("assets/images/mia.png");
@@ -53,6 +56,17 @@ function preload() {
   suspectFaces3[2] = loadImage("assets/images/caseyemotion.png");
   suspectFaces3[3] = loadImage("assets/images/jamieemotion.png");
   suspectFaces3[4] = loadImage("assets/images/emmaemotion.png");
+
+  bgMusic = loadSound("assets/sound/track.wav");
+}
+
+function startBackgroundMusic() {
+  if (!musicStarted && bgMusic) {
+    userStartAudio();
+    bgMusic.setVolume(0.75);
+    bgMusic.loop();
+    musicStarted = true;
+  }
 }
 
 function setup() {
@@ -76,6 +90,10 @@ function draw() {
   else if (currentScreen === "level3") drawLevel3();
   else if (currentScreen === "win") drawWin();
   else if (currentScreen === "fail") drawFail();
+}
+
+if (!musicStarted) {
+  startBackgroundMusic();
 }
 
 function mousePressed() {

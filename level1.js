@@ -119,8 +119,8 @@ function drawLevel1Intro() {
 function drawLevel1Lineup() {
   const buttons = getLevel1Buttons();
   const positions = getLineupPositions(suspects1.length);
-  const imgW = min(width * 0.15, 180);
-  const imgH = min(height * 0.48, 420);
+  const imgW = min(width * 0.8, 180);
+  const imgH = min(height * 0.55, 420);
 
   drawCaseHeader(
     "Level 1: Bank Robbery",

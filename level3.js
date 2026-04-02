@@ -210,8 +210,8 @@ function drawLevel3Inspect() {
 function drawLevel3Lineup() {
   const buttons = getLevel3Buttons();
   const positions = getLineupPositions(suspects3.length);
-  const imgW = min(width * 0.12, 160);
-  const imgH = min(height * 0.44, 390);
+  const imgW = min(width * 0.8, 180);
+  const imgH = min(height * 0.55, 420);
 
   drawCaseHeader(
     "Level 3: Murder Case",
