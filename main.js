@@ -63,8 +63,12 @@ function preload() {
 function startBackgroundMusic() {
   if (!musicStarted && bgMusic) {
     userStartAudio();
-    bgMusic.setVolume(0.75);
-    bgMusic.loop();
+
+    if (!bgMusic.isPlaying()) {
+      bgMusic.setVolume(0.65);
+      bgMusic.loop();
+    }
+
     musicStarted = true;
   }
 }
@@ -92,12 +96,10 @@ function draw() {
   else if (currentScreen === "fail") drawFail();
 }
 
-if (!musicStarted) {
-  startBackgroundMusic();
-}
-
 function mousePressed() {
-  if (transitionPending) return;
+  if (!musicStarted) {
+    startBackgroundMusic();
+  }
 
   if (currentScreen === "start") startMousePressed();
   else if (currentScreen === "instructions") instructionsMousePressed();
