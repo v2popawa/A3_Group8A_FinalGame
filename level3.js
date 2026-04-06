@@ -77,7 +77,7 @@ let forensicMessage3 = "";
 let questioned3 = [false, false, false, false, false];
 
 function getLevel3Buttons() {
-  const lineupRow = getButtonRow(3, height * 0.2, 150, 45, 18);
+  const lineupRow = getButtonRow(3, height * 0.95, 150, 50, 22);
   const inspectRow = getButtonRow(3, height * 0.86, 150, 50, 22);
 
   return {
@@ -222,12 +222,12 @@ function drawLevel3Lineup() {
 
   drawLineupFloor();
   drawInfoPill(
-  `Forensics left: ${forensicsLeft3}`,
-  width / 2,
-  height * 0.94,
-  220,
-  UI_COLORS.success,
-);
+    `Forensics left: ${forensicsLeft3}`,
+    width / 2,
+    height * 0.2,
+    220,
+    UI_COLORS.success,
+  );
 
   for (let i = 0; i < suspects3.length; i++) {
     drawLevel3Portrait(positions[i].x, positions[i].y, i, imgW, imgH);
